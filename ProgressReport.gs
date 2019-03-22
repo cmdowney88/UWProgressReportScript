@@ -33,6 +33,8 @@ function onFormSubmit(e) {
   var now = new Date();
   var year = now.getFullYear();
   
+  var docName = name + ' Spr ' + year + ' Progress Report'
+  
   //---------------------------------------------------------------------------------------------
   /* This section deletes all previous files under the name of the student who just triggered the script;
    * This is necessary because if a student submits their response, and then updates their answers, two
@@ -48,7 +50,7 @@ function onFormSubmit(e) {
 
   while (allFiles.hasNext()) {
     var iterFile = allFiles.next();
-    if (iterFile.getName() == name + ' ' + year + ' Progress Report'){
+    if (iterFile.getName() == docName){
       var deleteFile = iterFile.getId();
       Logger.log(deleteFile);
       toDelete.push(deleteFile);
@@ -70,11 +72,11 @@ function onFormSubmit(e) {
    */
   var templateId = 'REPLACE_THIS_WITH_TEMPLATE_DOC_ID';
   
-  // Makes a copy of the template file
+  // Maks a copy of the template file
   var documentId = DriveApp.getFileById(templateId).makeCopy().getId();
   
   // Names the newly created file with the name of the student who submitted the information and the year
-  DriveApp.getFileById(documentId).setName(name + ' ' + year + ' Progress Report');
+  DriveApp.getFileById(documentId).setName(docName);
   
   // Gets the document body as a variable
   var body = DocumentApp.openById(documentId).getBody();
