@@ -1,6 +1,6 @@
 /* PROGRESS REPORT GENERATION SCRIPT
  * AUTHOR: Agatha Downey
- * LAST UPDATED: 21 March 2019
+ * LAST UPDATED: 22 March 2019
  */
 
 // This function triggers on submission of the form linked to this spreadsheet
