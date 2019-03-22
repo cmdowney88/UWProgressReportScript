@@ -32,8 +32,10 @@ function onFormSubmit(e) {
   // Gets the current year
   var now = new Date();
   var year = now.getFullYear();
-  
-  var docName = name + ' Spr ' + year + ' Progress Report'
+
+
+  // Sets the document name
+  var docName = name + ' Spr ' + (year-1) + '-' + (year-2000) + ' Progress Report'
   
   //---------------------------------------------------------------------------------------------
   /* This section deletes all previous files under the name of the student who just triggered the script;
