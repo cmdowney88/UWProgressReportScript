@@ -3,6 +3,7 @@
  * LAST UPDATED: 21 March 2019
  */
 
+// This function triggers on submission of the form linked to this spreadsheet
 function onFormSubmit(e) {
   //---------------------------------------------------------------------------------------------
   
@@ -67,9 +68,9 @@ function onFormSubmit(e) {
    * IMPORTANT: THIS ID MUST CORRESPOND TO THE EXACT FILE BEING USED AS THE TEMPLATE
    * THE ID CAN BE FOUND IN THE URL WHEN YOU OPEN THE TEMPLATE DOCUMENT
    */
-  var templateId = '11z_OaORB86qLMftJbZ6vuiFfHwP_FuyRYPmdnHbeBd0';
+  var templateId = 'REPLACE_THIS_WITH_TEMPLATE_DOC_ID';
   
-  // Maks a copy of the template file
+  // Makes a copy of the template file
   var documentId = DriveApp.getFileById(templateId).makeCopy().getId();
   
   // Names the newly created file with the name of the student who submitted the information and the year
