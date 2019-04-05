@@ -1,12 +1,15 @@
 /* PROGRESS REPORT GENERATION SCRIPT
  * AUTHOR: Agatha Downey
- * LAST UPDATED: 22 March 2019
+ * LAST UPDATED: 5 April 2019
  */
 
 // This function triggers on submission of the form linked to this spreadsheet
 function onFormSubmit(e) {
   //---------------------------------------------------------------------------------------------
   
+  var lock = LockService.getScriptLock();
+  lock.waitLock(5000);
+
   // Opens the attached spreadsheet
   var sheet = SpreadsheetApp.getActiveSheet();
   // Gets the data from the spreadsheet
@@ -86,4 +89,6 @@ function onFormSubmit(e) {
   for(var i = 0; i < headers.length; i++){
       body.replaceText('##' + headers[i] + '##', newest_row[i])
   }
+
+  lock.releaseLock();
 }
